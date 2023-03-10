@@ -1,0 +1,19 @@
+Spring boot core application assignment
+
+
+-> develop bank application for the follwing requirements
+1. Account class contains features like withdra, deposit , balance check
+2. As soon as a customer performs any operation on Account class like depot, withdraw
+   then immedialy send notification for both SMS and Email (SMS and email notification just displayes
+   a message about that transaction)
+3. Make sure yourapplication is loose coupled. So that any feature liek WhatsApp notification
+   feature can be added with out any lock-in
+4. maintain proper naming and coding standards.package structure should be folled
+   strictly like following
+	 com.cts.bank
+   com.cts.bank.service
+   com.cts.bank.dao
+   com.cts.bank.model
+   com.cts.bank.dto
+
+5. Autowire featre must be used. Use Interfaces for every class you created.. 
