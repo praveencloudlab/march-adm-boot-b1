@@ -1,0 +1,65 @@
+Spring boot data source
+===============================================
+1.Hikari CP : default datasource
+2.Tomcat 
+3.DBCP2
+4.OracleUCP
+5.Generic
+================================================
+
+ecommerce db
+
+
+	-> brands
+	-> categories
+	-> products
+
+	1. find all brands of a given category
+	2. find all categories
+	3. find all products of a specific category with brand name
+
+
+	Notes
+	---------
+	-> 1 category may have more than one brands (many to many)
+			ex: Speakers 	: SONY
+				Televisions : SONY
+				Camera		: SONY
+
+
+				Many To Many
+
+				brand_id		category_id
+				1(samsung)		100 (TV)
+				1(samsung)		101(mobile)
+				1(samsung)		102(Tabs)
+				2(Sony)			100 (TV)
+
+
+
+   -> product stick and price must be maintained in saparate tables
+   -> price_id and stock_id should be foreign key in products table (One to One)
+   -> brands_products => have mappings of all products to the brands (one to Many)
+   		----------------------------
+   		brand_id	product_id
+   		1			10
+   		1			11
+   		1           12
+   		------------------------------
+
+   	price
+   	=======
+   	price_id	product_price
+
+
+   	stock
+    =============
+   	stock_id	stock_count
+
+
+     
+
+
+
+
+

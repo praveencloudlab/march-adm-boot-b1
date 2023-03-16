@@ -38,8 +38,8 @@ public class Application {
 
         //System.out.println(prod);
 
-        Product p6=new Product(1982,"Mouse",1200);
-        prodRepo.save(p6);
+        //Product p6=new Product(1982,"Mouse",1200);
+       // prodRepo.save(p6);
 
 
 
