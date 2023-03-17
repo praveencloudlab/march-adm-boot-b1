@@ -149,8 +149,50 @@ public class Application {
                 .mapToObj(i -> new Category(categoryNames.get(i)))
                 .collect(Collectors.toList());
 
-         brandRepo.saveAll(brandList);
-         catRepo.saveAll(categoryList);
+         //brandRepo.saveAll(brandList);
+         //catRepo.saveAll(categoryList);
+
+
+      //  Category category= catRepo.findById(207).orElse(null);
+       // if(category!=null)
+           // category.getBrandsInfo().add(brandRepo.findById(154).orElse(null));
+            //category.getBrandsInfo().add(brandRepo.findById(155).orElse(null));
+          //  category.getBrandsInfo().add(brandRepo.findById(156).orElse(null));
+            //category.getBrandsInfo().add(brandRepo.findById(157).orElse(null));
+            //category.getBrandsInfo().add(brandRepo.findById(158).orElse(null));
+            //category.getBrandsInfo().add(brandRepo.findById(159).orElse(null));
+            //category.getBrandsInfo().add(brandRepo.findById(160).orElse(null));
+            //category.getBrandsInfo().add(brandRepo.findById(161).orElse(null));
+
+            //catRepo.save(category);
+
+            // map products to the brands
+
+          //  Brand brand=brandRepo.findById(156).orElse(null);
+
+           // brand.getProducts().add(prodRepo.findById(105).orElse(null));
+           // brand.getProducts().add(prodRepo.findById(110).orElse(null));
+           // brand.getProducts().add(prodRepo.findById(106).orElse(null));
+
+           // brandRepo.save(brand);
+
+           // Category catObj=catRepo.findById(202).orElse(null);
+           // System.out.println(catObj);
+
+          // Brand brandObj= brandRepo.findById(154).orElse(null);
+            //System.out.println(brandObj);
+            // List all products by Product Name
+
+           // prodRepo.findByProductName("Sony Alpha a6600").forEach(System.out::println);
+
+           // prodRepo.findByProductNameLike("%air%").forEach(System.out::println);
+
+            //prodRepo.findByPriceProductPriceGreaterThanEqual(1000).forEach(System.out::println);
+            //prodRepo.findByPriceProductPriceBetween(700,1110).forEach(System.out::println);
+
+           // prodRepo.findByPriceProductPriceBetweenAndRatingGreaterThanEqual(700,1100,4.8).forEach(System.out::println);
+                prodRepo.m1();
+        }
 
 
 
@@ -158,6 +200,6 @@ public class Application {
 
 
 
-    }
+
 
 }
