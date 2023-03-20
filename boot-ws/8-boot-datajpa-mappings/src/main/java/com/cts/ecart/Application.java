@@ -191,7 +191,15 @@ public class Application {
             //prodRepo.findByPriceProductPriceBetween(700,1110).forEach(System.out::println);
 
            // prodRepo.findByPriceProductPriceBetweenAndRatingGreaterThanEqual(700,1100,4.8).forEach(System.out::println);
-                prodRepo.m1();
+               // prodRepo.m1();
+
+                Product p1Obj=new Product();
+                p1Obj.setProductName("%Pro%");
+              //.searchByNameV4(p1Obj).forEach(System.out::println);
+
+
+        double price=prodRepo.getPriceV1(104);
+        System.out.println(price);
         }
 
 

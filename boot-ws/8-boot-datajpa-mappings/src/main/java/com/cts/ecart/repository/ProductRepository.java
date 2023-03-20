@@ -2,8 +2,11 @@ package com.cts.ecart.repository;
 
 import com.cts.ecart.entity.Price;
 import com.cts.ecart.entity.Product;
+import jakarta.transaction.Transactional;
+import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,8 +26,34 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
    // QUERY
    // =========
-    //@Query(name = "q1",value = "select p1.product_id, p1.keywords,p1.price_id,p1.product_image,p1.product_name,p1.rating,p1.stock_id from com.cts.ecart.entity.Product p1 left join com.cts.ecart.entity.Price p2 on p2.price_id=p1.price_id where p2.product_price between ? and ? and p1.rating>=?")
-    //List<Product> m1();
+
+    @Query(name = "q1",value = "from Product")
+    List<Product> getProducts();
+
+    // find by name
+    @Query(name = "q2",value = "from Product as p  where p.productName like ?1")
+    List<Product> searchByName(String pname);
+
+    @Query(name = "q2",value = "from Product as p  where p.productName like:pname")
+    List<Product> searchByNamev1(String pname);
+
+    @Query(name = "q2",value = "from Product as p  where p.productName like:prodName")
+    List<Product> searchByNameV3(@Param("prodName")  String s1);
+
+    @Query(name = "q2",value = "from Product as p  where p.productName like:#{#prod.productName}")
+    List<Product> searchByNameV4(@Param("prod")  Product prod);
+
+    // get
+    // price of a given product ID
+    @Query(name = "q3",value = "select p.price.productPrice from Product p where p.productId=:productId")
+    double getPrice(int productId);
+
+    @Query(name = "q4",value = "select p2.productPrice from Product p1 join Price p2 on p2.priceId=p1.price.priceId where p1.productId=:prodId")
+    double getPriceV1(int prodId);
+
+  // select productPrice from Price pr ,Product prod where pr.priceId = prod.priceId and productId :=?
+
+
 
 
 
