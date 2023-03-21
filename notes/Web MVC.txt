@@ -1,0 +1,63 @@
+Types of web applications : 2 
+===================================
+1.request driven : Spring WEB MVC
+2.event driven   : JSF
+
+Web MVC
+==========
+-> its request driven application
+-> client - server application
+-> spring boot web mvc act like server side application
+-> even we can create client applications like react js,angular to the
+   spring boot web applications
+
+  two ways
+  ==========
+  1-> spring web itseldf acting like client and server: WEB MVC
+  2-> spring web itself a server, then diffrenet clients can be 
+      consumed web application services : WEB REST APPLICATION
+
+
+  Spring boot WEB MVC
+  ==========================
+  -> Its a framework
+  -> boot enables lots of auto configurations like JOSN,XML,app config
+
+  HTTP Status codes
+  ===================
+  1x : 100 - 109	=> information
+  2x : 200 - 299	=> sucess
+  3x : 300 - 399	=> redirections
+  4x : 400 - 499	=> client side errors
+  5x : 500 - 599	=> server side errors
+  ===================
+
+
+   spring web mvc components
+   ============================
+   1.front controller : DispatcherServlet
+   2.handler mappings
+   3.model and view
+   4.view resolvers
+   ============================
+
+
+   4.view resolvers : where response has to be?
+   ==============================================
+   1.InternalResourceViewResolver : default one
+   		JSP
+   		Thymeleaf
+   		Velacity
+   		Freemarker
+   		
+
+
+
+
+
+
+
+
+
+
+
