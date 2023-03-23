@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function() {
+            $('#categoryId').change(function() {
+                var categoryId = $(this).val();
+                $.get('./loadBrands', {categoryId: categoryId}, (brands)=> {
+                    console.log(brands)
+                    $('#brands').empty();
+                    $.each(brands, (index, brand)=> {
+                        $('#brands').append($(`<option value=${brand.brandId}>`).text(brand.brandName));
+                    });
+                });
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+
+<h1>Product Form</h1>
+
+<form action="./saveProductV1" method="post">
+    <div>
+        <input type="text" placeholder="Product Name" name="productName"/>
+    </div>
+    <div>
+        <input type="text" placeholder="Price" name="price.productPrice"/>
+    </div>
+    <div>
+        <input type="text" placeholder="Quantity" name="stock.stockItems"/>
+    </div>
+    <div>
+        <textarea type="text" placeholder="Description" name="description"></textarea>
+    </div>
+    <div>
+        <textarea type="text" placeholder="Keywords" name="keywords"></textarea>
+    </div>
+    <input type="file" name="image" placeholder="select image">
+    <div>
+        <select name="categoryId" id="categoryId">
+            <option> -Select Category- </option>
+            <option th:each="category: ${categories}" th:value="${category.categoryId}" th:text="${category.categoryName}">   </option>
+        </select>
+    </div>
+
+    <div>
+        <select name="brandId" id="brands">
+        </select>
+    </div>
+
+    <div>
+        <button>Save</button>
+    </div>
+
+</form>
+
+</body>
+</html>
