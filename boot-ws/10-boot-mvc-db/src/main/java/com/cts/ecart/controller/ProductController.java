@@ -29,6 +29,19 @@ public class ProductController {
         return "index";
     }
 
+
+    //lo
+    //ad products page
+    @GetMapping(value = "/findAllProducts")
+    public String findAllProducts(Model model){
+
+        List<Product> prods= prodRepo.findAll();
+        model.addAttribute("products",prods);
+        System.out.println(prods);
+        return "products";
+
+    }
+
     @GetMapping(value = "/loadProductForm")
     public String f1(Model model){
         // load all categoris from database
